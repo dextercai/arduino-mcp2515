@@ -171,6 +171,11 @@ MCP2515::ERROR MCP2515::setNormalMode()
     return setMode(CANCTRL_REQOP_NORMAL);
 }
 
+MCP2515::ERROR MCP2515::setOneShotMode()
+{
+    return setMode(CANCTRL_REQOP_ONESHOT);
+}
+
 MCP2515::ERROR MCP2515::setMode(const CANCTRL_REQOP_MODE mode)
 {
     modifyRegister(MCP_CANCTRL, CANCTRL_REQOP, mode);

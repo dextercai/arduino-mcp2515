@@ -274,7 +274,8 @@ class MCP2515
             CANCTRL_REQOP_LOOPBACK   = 0x40,
             CANCTRL_REQOP_LISTENONLY = 0x60,
             CANCTRL_REQOP_CONFIG     = 0x80,
-            CANCTRL_REQOP_POWERUP    = 0xE0
+            CANCTRL_REQOP_POWERUP    = 0xE0,
+            CANCTRL_REQOP_ONESHOT    = 0x08
         };
 
         static const uint8_t CANSTAT_OPMOD = 0xE0;
@@ -468,6 +469,7 @@ class MCP2515
         ERROR setSleepMode();
         ERROR setLoopbackMode();
         ERROR setNormalMode();
+        ERROR setOneShotMode();
         ERROR setClkOut(const CAN_CLKOUT divisor);
         ERROR setBitrate(const CAN_SPEED canSpeed);
         ERROR setBitrate(const CAN_SPEED canSpeed, const CAN_CLOCK canClock);
